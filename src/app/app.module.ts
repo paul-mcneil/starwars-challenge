@@ -11,6 +11,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule, MatCard} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatListModule} from '@angular/material/list';
+import {FlexLayoutModule} from '@angular/flex-layout';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,8 @@ import {MatListModule} from '@angular/material/list';
     MatToolbarModule,
     MatCardModule,
     MatProgressSpinnerModule,
-    MatListModule
+    MatListModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
