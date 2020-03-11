@@ -17,7 +17,7 @@ export const CHARACTERS: Character[] = [
     filmsDetails: []
   },
   {
-    id: 2,
+    id: -1,
     name: 'Obi-wan Kenobi',
     url: 'https://swapi.co/api/people/unknown/',
     filmUrls: [],

@@ -16,6 +16,7 @@ export class CharacterDetailsComponent implements OnInit {
   character: Character;
   films: string[];
   movies: Film[] = [];
+  charactersList: Character[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -26,12 +27,14 @@ export class CharacterDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.charactersList = this.characterService.getCharacters();
     this.getCharacterDetails();
   }
   getCharacterDetails(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.characterService.getCharacterDetails(id).subscribe((data: any) => {
       this.character = data;
+
       this.films = data.films;
       this.films.forEach(url => {
         this.filmDetailsService.getFilmDetails(url).subscribe((detail: any) => {
