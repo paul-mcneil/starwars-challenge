@@ -1,11 +1,16 @@
 <ng-container *ngIf="films">
-  <div class="movie-wrapper" *ngFor="let movie of movies">
-    <mat-card>
+  <div>{{character.name}}</div>
+  <mat-card class="movie-wrapper" *ngFor="let movie of movies">
+    <mat-card-header>
       <span>{{movie.title}}</span>
-      <span>{{movie.release_date}}</span>
-    </mat-card>
+    </mat-card-header>
+      <mat-card-content>
+        <span>{{movie.release_date | date : 'fullDate'}}</span>
+      </mat-card-content>
+
+
     <!-- {{movie | json}} -->
-  </div>
+  </mat-card>
 </ng-container>
 
 
