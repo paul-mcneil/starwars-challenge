@@ -9,7 +9,8 @@ import { CharacterDetailsComponent } from './components/character-details/charac
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule, MatCard} from '@angular/material/card';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatListModule} from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,9 @@ import {MatCardModule, MatCard} from '@angular/material/card';
     HttpClientModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,17 +1,15 @@
 <span routerLink="/characters">Back</span>
-<ng-container *ngIf="films">
-  <h3>{{character.name}} appearances:</h3>
-  <mat-card class="movie-wrapper" *ngFor="let movie of movies">
-    <mat-card-header>
-      <span>{{movie.title}}</span>
-    </mat-card-header>
-      <mat-card-content>
-        <span>{{movie.release_date | date : 'fullDate'}}</span>
-      </mat-card-content>
-
-
-    <!-- {{movie | json}} -->
-  </mat-card>
+<ng-container *ngIf="!loading && films">
+  <mat-list>
+    <h3>{{character.name}}</h3>
+    <mat-list-item *ngFor="let movie of movies">
+      <h4 mat-line>{{movie.title}}</h4>
+      <p mat-line> {{movie.release_date | date : 'fullDate'}}</p>
+    </mat-list-item>
+  </mat-list>
+</ng-container>
+<ng-container *ngIf="loading">
+  <mat-progress-spinner></mat-progress-spinner>
 </ng-container>
 
 

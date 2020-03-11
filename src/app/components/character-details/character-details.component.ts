@@ -17,6 +17,7 @@ export class CharacterDetailsComponent implements OnInit {
   films: string[];
   movies: Film[] = [];
   charactersList: Character[] = [];
+  loading = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -44,6 +45,6 @@ export class CharacterDetailsComponent implements OnInit {
           });
         });
       });
-    });
+    }, err => console.log('getCharacterDetails error'), () => this.loading = false);
   }
 }

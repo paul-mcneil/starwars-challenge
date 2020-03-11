@@ -12,6 +12,7 @@ import { FilmDetailsService } from 'src/app/film-details.service';
 export class CharactersComponent implements OnInit {
   characters: Character[];
   errorMessage = '';
+  loading: Observable<boolean>;
 
   constructor(
     private characterService: CharacterService,
