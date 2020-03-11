@@ -12,5 +12,8 @@
     <!-- {{movie | json}} -->
   </mat-card>
 </ng-container>
+<ng-container *ngIf="!character">
+  <div>You tried to access Obi wan kenobi but his URL is invalid!</div>
+</ng-container>
 
 
