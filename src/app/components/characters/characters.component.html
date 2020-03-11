@@ -1,0 +1,11 @@
+
+
+<ng-container *ngIf="characters">
+  <!-- <div>{{characters | json}}</div> -->
+    <div *ngFor="let character of characters" routerLink="/details/{{character.id}}" [state]="character.filmUrls">
+      <div class="char-wrapper" >
+        {{character.name}}
+      </div>
+  </div>
+</ng-container>
+

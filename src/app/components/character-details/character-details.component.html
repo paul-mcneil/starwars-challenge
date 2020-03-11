@@ -1,0 +1,11 @@
+<ng-container *ngIf="films">
+  <div class="movie-wrapper" *ngFor="let movie of movies">
+    <mat-card>
+      <span>{{movie.title}}</span>
+      <span>{{movie.release_date}}</span>
+    </mat-card>
+    <!-- {{movie | json}} -->
+  </div>
+</ng-container>
+
+
