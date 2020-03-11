@@ -9,7 +9,7 @@ import { HttpRequest, HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-character-details',
-  templateUrl: '/character-details.component.html',
+  templateUrl: './character-details.component.html',
   styleUrls: ['./character-details.component.less']
 })
 export class CharacterDetailsComponent implements OnInit {
