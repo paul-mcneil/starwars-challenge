@@ -1,3 +1,4 @@
+<span routerLink="/characters">Back</span>
 <ng-container *ngIf="films">
   <h3>{{character.name}} appearances:</h3>
   <mat-card class="movie-wrapper" *ngFor="let movie of movies">
@@ -11,9 +12,6 @@
 
     <!-- {{movie | json}} -->
   </mat-card>
-</ng-container>
-<ng-container *ngIf="!character">
-  <div>You tried to access Obi wan kenobi but his URL is invalid!</div>
 </ng-container>
 
 
