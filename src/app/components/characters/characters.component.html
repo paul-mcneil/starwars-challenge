@@ -2,10 +2,13 @@
 
 <ng-container *ngIf="characters">
   <!-- <div>{{characters | json}}</div> -->
-    <div *ngFor="let character of characters" routerLink="/details/{{character.id}}" [state]="character.filmUrls">
-      <div class="char-wrapper" >
+    <div *ngFor="let character of characters" routerLink="/details/{{character.id}}"
+          fxLayout="column" fxLayoutAlign="space-around center" >
+      <div fxLayout="row" class="char-wrapper" fxLayoutAlign="center center">
         {{character.name}}
       </div>
+
+
   </div>
 </ng-container>
 <ng-container *ngIf="!characters">

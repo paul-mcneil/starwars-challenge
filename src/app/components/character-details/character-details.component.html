@@ -1,12 +1,19 @@
-<span routerLink="/characters">Back</span>
+
+
 <ng-container *ngIf="!loading && films">
-  <mat-list>
-    <h3>{{character.name}}</h3>
-    <mat-list-item *ngFor="let movie of movies">
-      <h4 mat-line>{{movie.title}}</h4>
-      <p mat-line> {{movie.release_date | date : 'fullDate'}}</p>
-    </mat-list-item>
-  </mat-list>
+  <button mat-button color=primary routerLink="/characters"> Back</button>
+  <h1 fxLayoutAlign="center center">{{character.name}}</h1>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <mat-list>
+      <div fxLayout="row wrap">
+      <mat-list-item *ngFor="let movie of movies" class="movie-wrapper">
+          <div mat-line class="movie-title">{{movie.title}}</div>
+          <div mat-line class="releast-date"> {{movie.release_date | date : 'fullDate'}}</div>
+      </mat-list-item>
+    </div>
+    </mat-list>
+  </div>
+
 </ng-container>
 <ng-container *ngIf="loading">
   <mat-progress-spinner></mat-progress-spinner>
