@@ -1,8 +1,7 @@
 
-
+<h1 fxLayoutAlign="center center">{{character.name}}</h1>
+<button mat-button routerLink="/characters" *ngIf="!loading" > Back</button>
 <ng-container *ngIf="!loading && films">
-  <button mat-button routerLink="/characters"> Back</button>
-  <h1 fxLayoutAlign="center center">{{character.name}}</h1>
   <div fxLayout="column" fxLayoutAlign="center center">
     <mat-list>
       <div fxLayout="row wrap">

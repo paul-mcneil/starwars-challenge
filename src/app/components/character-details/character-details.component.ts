@@ -6,6 +6,7 @@ import { CharacterService } from '../../character.service';
 import { Film } from 'src/app/film';
 import { FilmDetailsService } from '../../film-details.service';
 import { HttpRequest, HttpClient } from '@angular/common/http';
+import _ from 'underscore';
 
 @Component({
   selector: 'app-character-details',
@@ -13,11 +14,13 @@ import { HttpRequest, HttpClient } from '@angular/common/http';
   styleUrls: ['./character-details.component.less']
 })
 export class CharacterDetailsComponent implements OnInit {
+
   character: Character;
   films: string[];
   movies: Film[] = [];
   charactersList: Character[] = [];
   loading = true;
+  id: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,9 +35,9 @@ export class CharacterDetailsComponent implements OnInit {
     this.getCharacterDetails();
   }
   getCharacterDetails(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
-    this.characterService.getCharacterDetails(id).subscribe((data: any) => {
-      this.character = data;
+    this.id = +this.route.snapshot.paramMap.get('id');
+    this.character = _.findWhere(this.charactersList, {id: this.id});
+    this.characterService.getCharacterDetails(this.id).subscribe((data: any) => {
 
       this.films = data.films;
       this.films.forEach(url => {
@@ -45,6 +48,9 @@ export class CharacterDetailsComponent implements OnInit {
           });
         });
       });
-    }, err => console.log('getCharacterDetails error'), () => this.loading = false);
+    }, err => console.log('getCharacterDetails error'), () => {
+      console.log('finished loading data');
+      this.loading = false;
+    });
   }
 }

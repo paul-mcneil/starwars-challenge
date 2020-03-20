@@ -13,7 +13,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatListModule} from '@angular/material/list';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatButtonModule, MatButton} from '@angular/material/button';
-
+import * as _ from 'underscore';
 
 @NgModule({
   declarations: [
